@@ -1,0 +1,10 @@
+/var/log/dynomite/*.log {
+  compress
+  daily
+  missingok
+  notifempty
+  sharedscripts
+  postrotate
+    /bin/kill -HUP `pidof dynomite 2> /dev/null` 2> /dev/null || true
+  endscript
+}

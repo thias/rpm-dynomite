@@ -1,0 +1,11 @@
+[Unit]
+Description=Dynomite distributed dynamo layer for Redis and Memcached
+After=network-online.target
+
+[Service]
+User=dynomite
+ExecStart=/usr/sbin/dynomite -o /var/log/dynomite/dynomite.log
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
